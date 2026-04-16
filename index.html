@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Futuristic Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1 class="title">Futuristic Calculator</h1>
+      <div class="controls">
+        <button id="toggleTheme" class="icon-btn" aria-label="Toggle theme">🌗</button>
+        <button id="toggleHistory" class="icon-btn" aria-label="Toggle history">📜</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="calculator" aria-label="Calculator">
+        <div class="display glass">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <div id="expression" class="expression">0</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button id="copyResult" class="icon-btn copy-btn" aria-label="Copy result">📋</button>
+            </div>
+          </div>
+          <div id="result" class="result"> </div>
+        </div>
+
+        <div class="pad glass" role="group" aria-label="Calculator keypad">
+          <button class="btn mem" data-value="MC">MC</button>
+          <button class="btn mem" data-value="MR">MR</button>
+          <button class="btn mem" data-value="M+">M+</button>
+          <button class="btn mem" data-value="M-">M-</button>
+
+          <button class="btn op" data-value="C">C</button>
+          <button class="btn op" data-value="DEL">DEL</button>
+          <button class="btn op" data-value="%">%</button>
+          <button class="btn op" data-value="/">÷</button>
+
+          <button class="btn num" data-value="1">1</button>
+          <button class="btn num" data-value="2">2</button>
+          <button class="btn num" data-value="3">3</button>
+          <button class="btn num" data-value="4">4</button>
+          <button class="btn num" data-value="5">5</button>
+
+          <button class="btn num" data-value="6">6</button>
+          <button class="btn num" data-value="7">7</button>
+          <button class="btn num" data-value="8">8</button>
+          <button class="btn op" data-value="(">(</button>
+          <button class="btn op" data-value=")">)</button>
+
+          <button class="btn op" data-value="*">×</button>
+          <button class="btn op" data-value="/">/</button>
+          <button class="btn op" data-value="-">-</button>
+          <button class="btn op" data-value="+">+</button>
+
+          <button class="btn num wide" data-value="0">0</button>
+          <button class="btn num" data-value=".">.</button>
+          <button class="btn eq" data-value="=">=</button>
+        </div>
+      </section>
+
+      <aside id="historyPanel" class="history glass hidden" aria-label="Calculation history">
+        <h2>History</h2>
+        <ul id="historyList"></ul>
+        <div class="history-actions">
+          <button id="clearHistory" class="small">Clear History</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">Tip: Use keyboard for quick input (numbers, + - * /, Enter, Backspace).</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

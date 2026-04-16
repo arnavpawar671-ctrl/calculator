@@ -1,0 +1,139 @@
+/* Futuristic glassmorphism calculator - dark-first design */
+:root{
+  --bg:#0b0f14;
+  --panel: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+  --accent: #7c5cff;
+  --accent-2: #00e5a8;
+  --muted: rgba(255,255,255,0.6);
+  --glass-blur: 10px;
+  --glass-shadow: 0 6px 30px rgba(2,6,23,0.6);
+}
+
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.08), transparent),
+              radial-gradient(900px 500px at 90% 90%, rgba(0,229,168,0.03), transparent),
+              var(--bg);
+  color:#e9eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+}
+
+.app{
+  width:100%;
+  max-width:980px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.app-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.title{
+  margin:0;
+  font-weight:600;
+  letter-spacing:0.4px;
+}
+.controls{display:flex;gap:8px}
+.icon-btn{
+  background:transparent;
+  border:1px solid var(--glass-border);
+  color:var(--muted);
+  padding:8px 10px;
+  border-radius:10px;
+  backdrop-filter: blur(var(--glass-blur));
+  cursor:pointer;
+  transition:all .18s ease;
+}
+.icon-btn:hover{transform:translateY(-3px); color:var(--accent)}
+
+.copy-btn{padding:6px 8px;font-size:14px}
+.mem{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.03)}
+
+.main{display:flex;gap:18px;align-items:flex-start}
+.calculator{flex:1;min-width:260px}
+.display{
+  padding:18px;
+  border-radius:16px;
+  min-height:84px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:6px;
+  box-shadow:var(--glass-shadow);
+}
+.expression{font-size:20px;color:var(--muted);word-break:break-all}
+.result{font-size:28px;font-weight:600}
+
+.pad{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(64px, 1fr));
+  grid-auto-rows:72px;
+  gap:12px;
+  margin-top:14px;
+  padding:16px;
+  border-radius:14px;
+}
+.pad .btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);
+  padding:0 12px;
+  border-radius:12px;
+  color:var(--muted);
+  font-size:18px;
+  cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.pad .btn:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+.pad .btn.wide{grid-column:span 2}
+.pad .btn.eq{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#051019;border:none}
+
+/* Number and symbol visual hierarchy */
+.btn.num{font-weight:700;font-size:20px}
+.btn.op{background:linear-gradient(180deg, rgba(124,92,255,0.12), rgba(0,229,168,0.06));border:1px solid rgba(124,92,255,0.12);color:#f6fbff;font-size:20px}
+.btn.op:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(12,18,40,0.6)}
+.btn.mem{font-size:14px;padding:6px 8px}
+.small{padding:8px 10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+.history{width:320px;padding:16px;border-radius:12px;display:flex;flex-direction:column;gap:8px}
+.history.hidden{display:none}
+.history h2{margin:4px 0 6px 0;font-size:16px}
+#historyList{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;overflow:auto;max-height:360px}
+.history-item{
+  display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.03);
+}
+.history-item small{color:var(--muted);font-size:12px}
+
+.footer{opacity:0.6;font-size:13px;text-align:center;margin-top:6px}
+
+/* glass effect */
+.glass{background:var(--panel);backdrop-filter: blur(var(--glass-blur));border:1px solid var(--glass-border)}
+
+/* responsive */
+@media (max-width:880px){
+  .main{flex-direction:column}
+  .history{width:100%}
+}
+
+/* light theme overrides */
+body.light{
+  --bg:#f3f7fb;
+  --panel: rgba(10,14,20,0.04);
+  color:#061028;
+}
+body.light .btn{color:#061028}
+body.light .title{color:#061028}
+body.light .icon-btn{color:#061028}
