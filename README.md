@@ -1,23 +1,36 @@
-Futuristic Calculator
+🧠 Smart Calculator
 
-A modern, responsive calculator web app built with HTML, CSS, and JavaScript.
+A simple but powerful Smart Calculator built using web technologies. It can perform basic and advanced calculations quickly and smoothly with a clean user interface.
 
-Features:
-- Dark-first glassmorphism UI with smooth hover animations
-- Basic operations: +, -, ×, ÷, %
-- Clear (`C`), Delete (`DEL`), Decimal support
-- Keyboard input support (numbers, operators, Enter, Backspace, Escape)
-- Calculation history stored in `localStorage` with quick recall
-- Dark/Light theme toggle
+🚀 Features
+➕ Basic arithmetic operations (add, subtract, multiply, divide)
+🧮 Smart input handling
+⚡ Fast and responsive design
+📱 Works on mobile and desktop
+🎯 Clean and user-friendly UI
+🛠️ Built With
+HTML
+CSS
+JavaScript
+📸 Preview
 
-Run locally:
-1. Open `WEBSITE/index.html` in a browser.
+(Add a screenshot or GIF of your calculator here)
 
-Notes for beginners:
-- Code is intentionally simple and well-commented in `script.js`.
-- History is saved to browser `localStorage` (no server required).
+📂 How to Use
+Clone this repository:
+git clone https://github.com/your-username/smart-calculator.git
+Open the folder:
+cd smart-calculator
+Run index.html in your browser
+💡 Future Ideas
+Dark mode 🌙
+History of calculations 📜
+Scientific calculator mode 🔬
+Keyboard support ⌨️
+👨‍💻 Author
 
-Files:
-- `index.html` – main UI
-- `style.css` – styles and layout
-- `script.js` – interactions and core calculator logic
+Made with 💙 by Arnav
+
+⭐ If you like this project
+
+Give it a star ⭐ and feel free to fork it!
