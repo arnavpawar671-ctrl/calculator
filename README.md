@@ -18,7 +18,7 @@ JavaScript
 
 📂 How to Use
 Clone this repository:
-git clone https://github.com/your-username/smart-calculator.git
+git clone https://github.com/arnavpawar671-ctrl/calculator.git
 Open the folder:
 cd smart-calculator
 Run index.html in your browser
