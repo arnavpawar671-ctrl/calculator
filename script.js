@@ -195,6 +195,7 @@
   // History toggling
   toggleHistory.addEventListener('click', () => {
     historyPanel.classList.toggle('hidden');
+    toggleHistory.setAttribute('aria-expanded', String(!historyPanel.classList.contains('hidden')));
     renderHistory();
   });
   clearHistoryBtn.addEventListener('click', () => {
@@ -224,3 +225,4 @@
     updateMemoryIndicator();
   })();
 })();
+
