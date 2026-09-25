@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Futuristic Calculator</title>
+  <meta name="description" content="A responsive calculator with keyboard support, calculation history, and theme controls.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +13,7 @@
       <h1 class="title">Futuristic Calculator</h1>
       <div class="controls">
         <button id="toggleTheme" class="icon-btn" aria-label="Toggle theme">🌗</button>
-        <button id="toggleHistory" class="icon-btn" aria-label="Toggle history">📜</button>
+        <button id="toggleHistory" class="icon-btn" aria-label="Toggle history" aria-controls="historyPanel" aria-expanded="false">📜</button>
       </div>
     </header>
 
@@ -25,7 +26,7 @@
               <button id="copyResult" class="icon-btn copy-btn" aria-label="Copy result">📋</button>
             </div>
           </div>
-          <div id="result" class="result"> </div>
+          <div id="result" class="result" aria-live="polite"> </div>
         </div>
 
         <div class="pad glass" role="group" aria-label="Calculator keypad">
@@ -77,3 +78,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
